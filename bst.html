@@ -181,6 +181,7 @@
 		return Math.max(height(tree.left), height(tree.right)) + 1
 	}
 
+	//working implementation
 	var getNth = function(tree, params) {
 		if (tree.right) {
 			getNth(tree.right, params);
@@ -207,47 +208,50 @@
 		return params.third;
 	}
 
-	var counter = 0
-	var thirdLargest = function(tree) {
-		if (tree.right) {
-			thirdLargest(tree.right)
-			counter++
-		}
-		if (counter === 3) {
-			return tree
-		}
-		if (tree.left) {
-			thirdLargest(tree.left)
-		}
+	// //doesn't work
+	// var counter = 0
+	// var thirdLargest = function(tree) {
+	// 	if (tree.right) {
+	// 		thirdLargest(tree.right)
+	// 		counter++
+	// 	}
+	// 	if (counter === 3) {
+	// 		return tree
+	// 	}
+	// 	if (tree.left) {
+	// 		thirdLargest(tree.left)
+	// 	}
 
-	}
+	// }
 
-	var largest2 = function(tree, count, result) {
-		if (tree.right) {
-			largest2(tree.right, count, result);
-			console.log(result);
-			if (result !== null) {
-				console.log("ine");
-				return;
-			}
-		}
-		console.log(count);
-		if (!--count) {
-			result = tree.key
-			return;
-		}
-		if (tree.left) {
-			largest2(tree.left, count, result);
-		}
-	}
-	var third2 = function(tree) {
-		if (tree.key == null) {
-			return null;
-		}
-		var count = 3;
-		var result = null;
-		return largest2(tree, count, result); 
-	}
+	// //doesn't work
+	// var largest2 = function(tree, count, result) {
+	// 	if (tree.right) {
+	// 		largest2(tree.right, count, result);
+	// 		console.log(result);
+	// 		if (result !== null) {
+	// 			console.log("ine");
+	// 			return;
+	// 		}
+	// 	}
+	// 	console.log(count);
+	// 	if (!--count) {
+	// 		result = tree.key
+	// 		return;
+	// 	}
+	// 	if (tree.left) {
+	// 		largest2(tree.left, count, result);
+	// 	}
+	// }
+	// //doesn't work
+	// var third2 = function(tree) {
+	// 	if (tree.key == null) {
+	// 		return null;
+	// 	}
+	// 	var count = 3;
+	// 	var result = null;
+	// 	return largest2(tree, count, result); 
+	// }
 
 	
 
